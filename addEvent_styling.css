@@ -1,0 +1,58 @@
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    align-items: end;
+    padding-top: 80px;
+}
+.form_body{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+input, textarea{
+    width: 400px;
+    height: 40px;
+    outline: none;
+    border: none;
+    font-family: 'Quicksand', serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+    background-color: #0B107D;
+    color: #CCF1FF;
+}
+input::placeholder, textarea::placeholder{
+    color: #CCF1FF;
+}
+input:hover,textarea:hover{
+    outline: 3px solid #070b50;
+}
+textarea{
+    resize: vertical;
+    min-height: 100px;
+    max-height: 350px;
+    padding-top: 20px;
+}
+.date{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.date input{
+    width: 40%;
+    flex-grow: 0;
+}
+svg{
+    height: 40px;
+    margin-left: 100px;
+}
+button{
+    font-size: 20px;
+    padding: smaller;
+    margin: 0px;
+}

@@ -1,0 +1,41 @@
+/* img file */
+#img_input{
+    display: none;
+}
+label{
+    cursor: pointer;
+}
+/* textual */
+.textual{
+    margin: 0px;
+}
+.textual p{
+    background-color: rgb(11, 17, 127,0.1);
+    padding: 50px;
+    line-height: 30px;
+    white-space: pre-line;
+    text-align: left;
+    text-transform: none;
+    font-style: normal;
+    font-family: 'Comfortaa', sans-serif;
+}
+textarea{
+    display: inline-block;
+    padding: 10px;
+    background: none;
+    border: none;
+    text-align: left;
+    text-wrap: balance;
+    width: 100%;
+    overflow-y: scroll;
+    height: auto;
+    min-height: 100%;
+}
+textarea:focus{
+    outline: none;
+    border: none;
+}
+#submit_links{
+    font-size: 20px;
+    padding: 5px 10px;
+}

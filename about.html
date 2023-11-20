@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav_styling.css">
+    <link rel="stylesheet" href="hero_styling.css">
+    <link rel="stylesheet" href="about_styling.css">
+    <title>About</title>
+</head>
+<body>
+    <nav>
+        <h1 class="logo"><a href="home.html">me</a></h1>
+        <ul>
+            <li><a href="home.html">home</a></li>
+            <li class="active"><a href="about.html">about</a></li>
+            <li><a href="addEvent.html">addEvent</a></li>
+            <li><a href="share.html">share</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div class="textual">
+            <textarea onkeyup="update_about()" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' id="about">
+                This page is meant for providing a short bibliography, summary of events timeline maybe,
+
+                Don’t make it too long, nor too short
+
+                You can write whatever you want if you click on the text box, as it will change to input field to accept any changes you want
+
+                the image in this page is same as home page one, but you cannot edit it from here
+
+                good luck with your journey, don’t forgot to share it with your friends & colleagues!
+            </textarea>
+        </div>
+        <div class="visual">
+            <img id="profile">
+            <div class="editor">
+                <svg onclick="remove_img()" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
+                <input onchange="save_img(this.files[0])" type="file" accept="image/*" id="img_input">
+                <label for="img_input">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
+                </label>
+            </div>
+        </div>
+    </section>
+    <form action="#" onsubmit="insert_links()" id="links_form">
+        <input type="url" id="insta" placeholder="insta">
+        <input type="url" id="facebook" placeholder="facebook">
+        <input type="url" id="whatsapp" placeholder="whatsapp">
+        <button type="submit" id="submit_links">Submit Links</button>
+    </form>
+    <script src="about_script.js"></script>
+</body>
+</html>

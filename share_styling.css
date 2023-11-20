@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.types{
+    display: flex;
+    gap: 80px;
+}
+svg{
+    height: 120px;
+    transition: 1s;
+}
+svg:hover{
+    fill: #0B107D;
+}
+button{
+    cursor: auto;
+}
