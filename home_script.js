@@ -113,7 +113,7 @@ function load_timeline(){
                 <button id="b${i}" onclick="show_contents(this.id)">${record.title}<br><span class="event_date">${getMonthName(record.month)} - ${record.year}</span> </button>
                 <div class="event_body">
                     <div class="editor">
-                        <svg onclick="delete_event(this.parentNode.parentNode.id)" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
+                        <svg onclick="delete_event(this.parentNode.parentNode.parentNode.id)" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>
                         <svg onclick="update_event(this.parentNode.parentNode.parentNode.id)" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
                     </div>
                     <p class="event_details">
@@ -169,7 +169,7 @@ function load_social_links(){
 // deleting event in home page
 function delete_event(event_id){
     let data = localStorage.getItem("events") ? JSON.parse(localStorage.getItem("events")):[];
-    index = event_id.substr(1)
+    index = event_id.substring(1)
     data.splice(index, 1)
     localStorage.setItem("events", JSON.stringify(data))
     load_timeline()
@@ -177,7 +177,7 @@ function delete_event(event_id){
 
 // updating event from home, go to addEvent page and save index that needs update to localstorage
 function update_event(event_id){
-    index = event_id.substr(1)
+    index = event_id.substring(1)
     localStorage.setItem("event_to_be_updated", JSON.stringify(index))
     location.assign("addEvent.html")
 }
