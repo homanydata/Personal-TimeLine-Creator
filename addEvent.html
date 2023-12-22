@@ -32,6 +32,34 @@
         </div>
         <button type="submit" id="submit">add new event</button>
     </form>
+    <script>
+        function changeColors(color, newValue) {
+            document.documentElement.style.setProperty(color, newValue);
+            storeColors();
+        }
+
+        function applyColors() {
+            const storedPrimaryColor = localStorage.getItem('primaryColor');
+            const storedSecondaryColor = localStorage.getItem('secondaryColor');
+            const storedThirdColor = localStorage.getItem('thirdColor');
+
+            // Apply stored colors or use default if not available
+            document.documentElement.style.setProperty('--primary-color', storedPrimaryColor || '#0B107D');
+            document.documentElement.style.setProperty('--secondary-color', storedSecondaryColor || '##FFC002');
+            document.documentElement.style.setProperty('--third-color', storedThirdColor || '#CCF1FF');
+        }
+
+        function storeColors() {
+            const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+            const secondaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+            const thirdColor= getComputedStyle(document.documentElement).getPropertyValue('--third-color');
+
+            // Store selected colors in local storage
+            localStorage.setItem('primaryColor', primaryColor);
+            localStorage.setItem('secondaryColor', secondaryColor);
+            localStorage.setItem('thirdColor', thirdColor);
+        }
+    </script>
     <script src="addEvent.js"></script>
 </body>
 </html>

@@ -23,11 +23,11 @@ input, textarea{
     padding: 4px 10px;
     border-radius: 10px;
     flex-grow: 1;
-    background-color: #0B107D;
-    color: #CCF1FF;
+    background-color: var(--primary-color);
+    color: var(--third-color);
 }
 input::placeholder, textarea::placeholder{
-    color: #CCF1FF;
+    color: var(--third-color);
 }
 input:hover,textarea:hover{
     outline: 3px solid #070b50;

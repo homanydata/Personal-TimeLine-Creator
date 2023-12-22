@@ -6,7 +6,7 @@ input, textarea{
     border: none;
     text-align: center;
     text-wrap: balance;
-    color: #0B107D;
+    color: var(--primary-color);
     width: 100%;
     overflow: hidden;
 }
@@ -28,7 +28,7 @@ vl{
     position: absolute;
     top: 0px;
     left: 50%;
-    border: 5px dashed #0B107D;
+    border: 5px dashed var(--primary-color);
     height: 100%;
 }
 .events_container{
@@ -66,10 +66,10 @@ vl{
 }
 .event_details{
     min-width: 80%;
-    color: #0B107D;
+    color: var(--primary-color);
     font-size: 20px;
     text-align: left;
-    border: 1px solid #0B107D;
+    border: 1px solid var(--primary-color);
     padding: 15px 20px;
 }
 .event_date{
@@ -88,7 +88,7 @@ vl{
     right: 20px;
     bottom: 20px;
     height: 50px;
-    fill: #FFC002;
+    fill: var(--secondary-color);
     cursor: pointer;
 }
 
@@ -102,7 +102,7 @@ footer{
     text-align: center;
 }
 .social_media{
-    background-color: #0B107D;
+    background-color: var(--primary-color);
     padding-top: 15px;
     padding-bottom: 5px;
     display: flex;
@@ -122,5 +122,5 @@ footer a{
     font-size: 30px;
 }
 footer svg{
-    fill: #FFC002;
+    fill: var(--secondary-color);
 }

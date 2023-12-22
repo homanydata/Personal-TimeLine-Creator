@@ -1,5 +1,9 @@
 // There are several ways to share, HTML
 
+onload = ()=>{
+    applyColors()
+}
+
 // HTML
 function share_as_html(){
     // Create a Blob from the HTML content
@@ -53,6 +57,11 @@ img_url = JSON.parse(localStorage.getItem("img_url")) ? JSON.parse(localStorage.
 result = JSON.parse(localStorage.getItem("textuals")) ? JSON.parse(localStorage.getItem("textuals")):{greeting:"hello everyone, i am",name:"your name",slogan:"write what best describes you in 2 lines"}
 console.log(result)
 console.log(img_url)
+
+let primaryColor = localStorage.getItem('primaryColor');
+let secondaryColor = localStorage.getItem('secondaryColor');
+let thirdColor= localStorage.getItem('thirdColor');
+
 let generated_html = `<!DOCTYPE html><html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -60,24 +69,29 @@ let generated_html = `<!DOCTYPE html><html lang="en">
         <style>
             /* nav styling */
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=DM+Serif+Display:ital@0;1&family=Dosis:wght@700&family=Pacifico&family=Patua+One&display=swap');
+            :root{
+                --primary-color:${primaryColor};
+                --secondary-color:${secondaryColor};
+                --third-color:${thirdColor};
+            }
             *{
                 margin: 0;
                 padding: 0;
             }
             body{
-                background-color: #CCF1FF;
+                background-color: var(--third-color);
             }
             nav a{
                 text-decoration: none;
-                color: #CCF1FF;
+                color: var(--third-color);
             }
             nav{
-                background-color: #0B107D;
+                background-color: var(--primary-color);
                 display: flex;
                 flex-flow: row nowrap;
                 justify-content: space-between;
                 align-items: center;
-                color: #CCF1FF;
+                color: var(--third-color);
                 padding: 10px 80px;
                 margin-bottom: 50px;
                 text-transform: capitalize;
@@ -96,21 +110,21 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 position: relative;
                 font-size: 28px;
                 font-family: 'Patua One', serif;
-                color: #CCF1FF;
+                color: var(--third-color);
                 text-decoration: none;
                 list-style: none;
                 margin-left: 35px;
                 cursor: pointer;
             }
             nav .active{
-                color: #FFC002;
+                color: var(--secondary-color);
             }
             nav ul li::after{
                 content: '';
                 display: block;
                 width: 0%;
                 height:2px;
-                background: #CCF1FF;
+                background: var(--third-color);
                 margin: auto;
                 margin-top: 10px;
                 transition: 1s;
@@ -120,15 +134,15 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 display: block;
                 width: 100%;
                 height:2px;
-                background: #CCF1FF;
+                background: var(--third-color);
                 margin: auto;
                 margin-top: 10px;
             }
             nav .active::after{
-                background: #FFC002;
+                background: var(--secondary-color);
             }
             nav .active:hover::after{
-                background: #FFC002;
+                background: var(--secondary-color);
             }
             html {
                 scroll-behavior: smooth;
@@ -169,7 +183,7 @@ let generated_html = `<!DOCTYPE html><html lang="en">
             .textual{
                 width: 50%;
                 /* padding-right: 10%; */
-                color: #0B107D;
+                color: var(--primary-color);
                 line-height: 130px;
                 text-align: center;
                 text-wrap: balance;
@@ -195,8 +209,8 @@ let generated_html = `<!DOCTYPE html><html lang="en">
             }
             button{
                 font-family: 'Dosis', sans-serif;
-                color: #FFC002;
-                border: 2px solid #FFC002;
+                color: var(--secondary-color);
+                border: 2px solid var(--secondary-color);
                 background: none;
                 padding: 15px 20px;
                 border-radius: 50px;
@@ -208,8 +222,8 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 transition: 1s;
             }
             button:hover{
-                color: #CCF1FF;
-                background-color: #FFC002;
+                color: var(--third-color);
+                background-color: var(--secondary-color);
             }
             /* timeline */
             .timeline{
@@ -223,7 +237,7 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 position: absolute;
                 top: 0px;
                 left: 50%;
-                border: 5px dashed #0B107D;
+                border: 5px dashed var(--primary-color);
                 height: 100%;
             }
             .events_container{
@@ -241,8 +255,8 @@ let generated_html = `<!DOCTYPE html><html lang="en">
             .event button{
                 width: 80%;
                 line-height: 30px;
-                color: #CCF1FF;
-                background-color: #FFC002;
+                color: var(--third-color);
+                background-color: var(--secondary-color);
                 margin: 0px auto;
                 z-index:1;
             }
@@ -260,10 +274,10 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 overflow: hidden;
                 transition: all 1s ;
                 
-                color: #0B107D;
+                color: var(--primary-color);
                 font-size: 20px;
                 text-align: left;
-                border: 1px solid #FFC002;
+                border: 1px solid var(--secondary-color);
             }
             .event_date{
                 color: #5D5D5D;
@@ -281,7 +295,7 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 right: 20px;
                 bottom: 20px;
                 height: 50px;
-                fill: #FFC002;
+                fill: var(--secondary-color);
                 cursor: pointer;
             }
             
@@ -297,11 +311,11 @@ let generated_html = `<!DOCTYPE html><html lang="en">
             footer p{
                 font-weight: 200;
                 font-size: 24px;
-                color: #FFC002;
+                color: var(--secondary-color);
                 margin: 25px;
             }
             .social_media{
-                background-color: #0B107D;
+                background-color: var(--primary-color);
                 padding-top: 30px;
                 padding-bottom: 10px;
                 display: flex;
@@ -318,7 +332,7 @@ let generated_html = `<!DOCTYPE html><html lang="en">
                 font-size: 40px;
             }
             footer svg{
-                fill: #FFC002;
+                fill: var(--secondary-color);
             }
         </style>
         <title>Home</title>
@@ -328,7 +342,6 @@ let generated_html = `<!DOCTYPE html><html lang="en">
             <h1 class="logo">me</h1>
             <ul>
                 <li class="active">home</li>
-                <li>about</li>
             </ul>
         </nav>
         <section class="hero">
@@ -447,7 +460,7 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
             .textual{
                 width: 100%;
                 padding: 50px 0px;
-                color: #0B107D;
+                color: var(--primary-color);
                 line-height: 130px;
                 text-align: center;
                 text-wrap: balance;
@@ -455,7 +468,7 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
                 flex-flow: column nowrap;
                 justify-content: center;
                 align-items: center;
-                background-color: #CCF1FF;
+                background-color: var(--third-color);
             }
             .title{
                 text-transform: capitalize;
@@ -474,8 +487,8 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
             }
             button{
                 font-family: 'Dosis', sans-serif;
-                color: #FFC002;
-                border: 2px solid #FFC002;
+                color: var(--secondary-color);
+                border: 2px solid var(--secondary-color);
                 background: none;
                 padding: 15px 20px;
                 border-radius: 50px;
@@ -491,13 +504,13 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
                 padding: 100px 0px;
                 width: 100%;
                 position: relative;
-                background-color: #CCF1FF;
+                background-color: var(--third-color);
             }
             vl{
                 position: absolute;
                 top: 0px;
                 left: 50%;
-                border: 5px dashed #0B107D;
+                border: 5px dashed var(--primary-color);
                 height: 100%;
             }
             .events_container{
@@ -515,8 +528,8 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
             .event button{
                 width: 80%;
                 line-height: 30px;
-                color: #0B107D;
-                background-color: #FFC002;
+                color: var(--primary-color);
+                background-color: var(--secondary-color);
                 margin: 0px auto;
                 z-index:1;
             }
@@ -525,10 +538,10 @@ let generated_html_2 = `<!DOCTYPE html><html lang="en">
                 margin: auto;
                 margin-top: -10px;
                 padding: 10px 15px;
-                color: #0B107D;
+                color: var(--primary-color);
                 font-size: 20px;
                 text-align: left;
-                border: 1px solid #FFC002;
+                border: 1px solid var(--secondary-color);
             }
             .event_date{
                 color: #5D5D5D;

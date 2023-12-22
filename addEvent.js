@@ -7,6 +7,7 @@ const submit = document.getElementById("submit")
 
 onload = ()=>{
     index = JSON.parse(localStorage.getItem("event_to_be_updated"))
+    applyColors()
     if(+index >= 0){
         let e = JSON.parse(localStorage.getItem("events"))[+index]
         title.value = e.title

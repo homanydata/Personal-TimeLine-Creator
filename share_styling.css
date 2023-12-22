@@ -14,7 +14,7 @@ svg{
     transition: 1s;
 }
 svg:hover{
-    fill: #0B107D;
+    fill: var(--primary-color);
 }
 button{
     cursor: auto;

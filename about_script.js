@@ -8,6 +8,7 @@ const whatsapp = document.getElementById("whatsapp")
 
 onload = ()=>{
     display_image()
+    applyColors()
     load_about()
 }
 

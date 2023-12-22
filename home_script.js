@@ -61,6 +61,7 @@ onload = ()=>{
             top:0,
             left:0
     })
+    applyColors()
     load_timeline()
     load_textuals()
     load_social_links()
