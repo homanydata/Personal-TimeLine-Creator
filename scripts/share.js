@@ -53,7 +53,7 @@ function load_timeline(){
     return result;
 }
 
-img_url = JSON.parse(localStorage.getItem("img_url")) ? JSON.parse(localStorage.getItem("img_url")):"resources/empty_profile.png";
+img_url = JSON.parse(localStorage.getItem("img_url")) ? JSON.parse(localStorage.getItem("img_url")):"../resources/empty_profile.png";
 result = JSON.parse(localStorage.getItem("textuals")) ? JSON.parse(localStorage.getItem("textuals")):{greeting:"hello everyone, i am",name:"your name",slogan:"write what best describes you in 2 lines"}
 console.log(result)
 console.log(img_url)
@@ -440,7 +440,7 @@ function getMonthName(monthNumber) {
 
 
 
-img_url = JSON.parse(localStorage.getItem("img_url")) ? JSON.parse(localStorage.getItem("img_url")):"resources/empty_profile.png";
+img_url = JSON.parse(localStorage.getItem("img_url")) ? JSON.parse(localStorage.getItem("img_url")):"../resources/empty_profile.png";
 result = JSON.parse(localStorage.getItem("textuals")) ? JSON.parse(localStorage.getItem("textuals")):{greeting:"hello everyone, i am",name:"your name",slogan:"write what best describes you in 2 lines"}
 console.log(result)
 console.log(img_url)

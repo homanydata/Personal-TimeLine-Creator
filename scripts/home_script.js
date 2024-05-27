@@ -138,7 +138,7 @@ function getMonthName(monthNumber) {
 function display_image(){
     img_url = JSON.parse(localStorage.getItem("img_url"))
     if(! img_url){
-        img_url = "resources/empty_profile.png"
+        img_url = "../resources/empty_profile.png"
     }
     profile.src = img_url
 }
